@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>База данных - Моё портфолио</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Логотип">
+                <span>Моё портфолио</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О себе</a></li>
+                    <li><a href="documents.html">Документы</a></li>
+                    <li><a href="gallery.html">Галерея</a></li>
+                    <li><a href="database.html">Данные</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <h1>Работа с базами данных</h1>
+        <p>В этом разделе представлены результаты лабораторной работы №3 – создание и работа с базой данных в Microsoft Access.</p>
+        
+        <h2>Структура базы данных</h2>
+        <p>Была создана база данных для учёта записи пациентов к врачу. Основные таблицы:</p>
+        <ul style="margin-left: 20px;">
+            <li><strong>Пациенты</strong> - содержит информацию о пациентах (ID, ФИО, дата рождения, телефон)</li>
+            <li><strong>Врачи</strong> - содержит информацию о врачах (ID, ФИО, специализация, кабинет)</li>
+            <li><strong>Записи</strong> - содержит информацию о записях (ID пациента, ID врача, дата приема, время)</li>
+        </ul>
+        
+        <h2>Схема данных</h2>
+        <div style="text-align: center; margin: 30px 0;">
+            <img src="images/db_schema.png" alt="Схема базы данных" style="max-width: 100%; border: 1px solid #ddd; border-radius: 10px;">
+            <p><em>Схема связей между таблицами (скриншот из Access)</em></p>
+        </div>
+        
+        <h2>Пример данных</h2>
+        <!-- Поле для поиска -->
+        <div style="margin: 20px 0;">
+            <input type="text" id="searchInput" placeholder="Поиск по таблице..." onkeyup="filterTable()" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+        </div>
+        
+        <div class="table-container">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>ФИО Пациента</th>
+                        <th>Врач</th>
+                        <th>Специализация</th>
+                        <th>Дата приема</th>
+                        <th>Время</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Иванов Иван Иванович</td>
+                        <td>Петрова А.С.</td>
+                        <td>Терапевт</td>
+                        <td>25.03.2026</td>
+                        <td>10:00</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Сидорова Мария Петровна</td>
+                        <td>Смирнов Д.В.</td>
+                        <td>Кардиолог</td>
+                        <td>26.03.2026</td>
+                        <td>11:30</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Кузнецов Алексей Сергеевич</td>
+                        <td>Иванова Е.Н.</td>
+                        <td>Хирург</td>
+                        <td>27.03.2026</td>
+                        <td>14:00</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Попова Анна Владимировна</td>
+                        <td>Петрова А.С.</td>
+                        <td>Терапевт</td>
+                        <td>28.03.2026</td>
+                        <td>09:
+
+
+15</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h2>Пример SQL-запроса</h2>
+        <div style="background-color: #3d0e69; color: #fffafa; padding: 20px; border-radius: 10px; overflow-x: auto;">
+            <pre style="margin: 0;">
+SELECT Пациенты.ФИО, Врачи.ФИО, Врачи.Специализация, Записи.Дата_приема
+FROM (Записи
+INNER JOIN Пациенты ON Записи.ID_пациента = Пациенты.ID)
+INNER JOIN Врачи ON Записи.ID_врача = Врачи.ID
+WHERE Записи.Дата_приема BETWEEN #01.03.2026# AND #31.03.2026#
+ORDER BY Записи.Дата_приема ASC;
+            </pre>
+        </div>
+        
+        <h2>Скачать базу данных</h2>
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
+            <div class="card">
+                <div class="card-content">
+                    <h3>База данных Access</h3>
+                    <p>Исходный файл базы данных (Access)</p>
+                    <p><strong>Размер:</strong> 1.2 МБ</p>
+                    <button onclick="downloadFile('database.accdb', 'downloads/database.accdb')" class="btn">Скачать ACCDB</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Экспорт данных</h3>
+                    <p>Данные в формате CSV для открытия в Excel</p>
+                    <p><strong>Размер:</strong> 0.1 МБ</p>
+                    <button onclick="downloadFile('export.csv', 'data/export.csv')" class="btn">Скачать CSV</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Сулеина ИСП-245. Все права защищены.</p>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

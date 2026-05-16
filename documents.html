@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документы - Моё портфолио</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Логотип">
+                <span>Моё портфолио</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О себе</a></li>
+                    <li><a href="documents.html">Документы</a></li>
+                    <li><a href="gallery.html">Галерея</a></li>
+                    <li><a href="database.html">Данные</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <h1>Примеры оформления документов</h1>
+        <p>В этом разделе представлены документы, созданные в рамках лабораторной работы №1. Здесь вы можете увидеть примеры оформления таблиц, использования стилей, а также скачать исходные файлы.</p>
+        
+        <h2>Таблица данных (из ЛР1)</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Название документа</th>
+                        <th>Тип</th>
+                        <th>Дата создания</th>
+                        <th>Объем (КБ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Отчет по лабораторной работе</td>
+                        <td>DOCX</td>
+                        <td>05.02.2026</td>
+                        <td>475</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Отчет по лабораторной работе</td>
+                        <td>PDF</td>
+                        <td>22.01.2026</td>
+                        <td>285</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Иконка для сайта</td>
+                        <td>SVG</td>
+                        <td>05.02.2026</td>
+                        <td>14</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="highlight">
+            <p><strong>Примечание:</strong> Все документы оформлены в соответствии с требованиями ГОСТ. Таблицы содержат структурированные данные из моего отчета.</p>
+        </div>
+        
+        <h2>Скачать материалы</h2>
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Отчёт в Word</h3>
+                    <p>Полный отчёт, оформленный по ГОСТу</p>
+                    <p><strong>Размер:</strong> 475 КБ</p>
+                    <button onclick="downloadFile('otchet.docx', 'downloads/otchet.docx')" class="btn">Скачать DOCX</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3>Отчёт в PDF</h3>
+                    <p>PDF-версия для печати и просмотра</p>
+                    <p><strong>Размер:</strong> 285 КБ</p>
+                    <button onclick="downloadFile('otchet.pdf', 'downloads/otchet.pdf')" class="btn">Скачать PDF</button>
+                </div>
+            </div>
+        </div>
+        
+        <h2>Пример оформления списка (из ЛР1)</h2>
+        <ul style="margin-left: 20px;">
+            <li>Пункт 1: использование стилей в Word</li>
+            <li>Пункт 2: автоматическое оглавление</li>
+            <li>Пункт 3: вставка таблиц и рисунков</li>
+
+
+<li>Пункт 4: работа с колонтитулами</li>
+            <li>Пункт 5: форматирование текста по ГОСТ</li>
+        </ul>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Сулеина ИСП-245. Все права защищены.</p>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

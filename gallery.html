@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея - Моё портфолио</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Логотип">
+                <span>Моё портфолио</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О себе</a></li>
+                    <li><a href="documents.html">Документы</a></li>
+                    <li><a href="gallery.html">Галерея</a></li>
+                    <li><a href="database.html">Данные</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <h1>Галерея работ</h1>
+        <p>В этом разделе представлены изображения, обработанные в рамках лабораторной работы №2. Нажмите на любое изображение, чтобы увеличить.</p>
+        
+        <!-- Баннер из ЛР2 -->
+        <div style="margin: 30px 0; text-align: center;">
+            <img src="images/banner.jpg" alt="Баннер, созданный в ЛР2" style="max-width: 100%; border-radius: 10px;">
+            <p><em>Баннер для сайта, созданный в ЛР2</em></p>
+        </div>
+        
+        <h2>Обработанные изображения</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="images/версия-2-полная.jpg" alt="Версия 1 - для печати">
+                <div class="gallery-caption">Версия 1: для печати (TIFF)</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/версия-2-полная.jpg" alt="Версия 2 - полная">
+                <div class="gallery-caption">Версия 2: полная обработка (JPG)</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/версия-3-миниатюра.jpg" alt="Версия 3 - минимальная">
+                <div class="gallery-caption">Версия 3: минимальная оптимизация (JPG)</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/мдк лаба 2 готовое.png" alt="Готовый результат">
+                <div class="gallery-caption">Итоговый вариант (PNG)</div>
+            </div>
+        </div>
+        
+        <h2>Сравнение размеров файлов</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Файл</th>
+                        <th>Формат</th>
+                        <th>Размер (пикс.)</th>
+                        <th>Вес (КБ)</th>
+                        <th>Назначение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>версия-1-печать.tif</td>
+                        <td>TIFF</td>
+                        <td>3508×2480</td>
+                        <td>~24500</td>
+                        <td>Архив/Печать</td>
+                    </tr>
+                    <tr>
+                        <td>версия-2-полная.jpg</td>
+                        <td>JPEG 90%</td>
+                        <td>1920×1080</td>
+                        <td>~850</td>
+                        <td>Сайт/Презентация</td>
+                    </tr>
+                    <tr>
+                        <td>версия-3-миниматора.jpg</td>
+                        <td>JPEG 75%</td>
+                        <td>1200×800</td>
+                        <td>~320</td>
+                        <td>Веб-оптимизация</td>
+                    </tr>
+                    <tr>
+                        <td>мдк лаба 2 готовое.png</td>
+                        <td>PNG</td>
+                        <td>800×600</td>
+                        <td>~180</td>
+                        <td>Итоговый вариант</td>
+
+
+</tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Сулеина ИСП-245. Все права защищены.</p>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
